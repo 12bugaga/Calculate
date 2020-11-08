@@ -19,7 +19,7 @@ namespace MainFunc
                     exist = true;
             }
             if (exist == false)
-                throw new ArgumentNullException("operation");
+                throw new Exception("Нет такой операции!");
             return exist;
         }
 
@@ -34,7 +34,7 @@ namespace MainFunc
                     closeCount++;
             }
             if (openCount != closeCount)
-                throw new ArgumentNullException("operation");
+                throw new Exception("Неверно расставлены скобки!уч");
         }
 
         public static List<string>SeparationText(string firstStr)
@@ -102,7 +102,7 @@ namespace MainFunc
                         }
                         //Два знака стоят рядом без скобок
                         else if (AvailableOperation(firstStr[num]) && ((finishStr != null) || (value != "")) && !char.IsDigit(firstStr[num - 1]))
-                            throw new ArgumentNullException("operation");
+                            throw new Exception("Неверно расставлены знаки операций!");
                     }
                 }
                 //Последнее число в примере
@@ -154,6 +154,8 @@ namespace MainFunc
                     result = Multiplication(a, b);
                     break;
                 case '/':
+                    if (b == 0)
+                        throw new DivideByZeroException();
                     result = Division(a, b);
                     break;
             }
