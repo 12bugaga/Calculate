@@ -18,13 +18,16 @@ namespace Calculate
             {
                 Console.Write(value);
             }
+            Console.Write("\n");
         }
 
         static void Main(string[] args)
         {
             string firstStr = GetStr();
-            List<string> separateStr = MainFunc.Calculator.SeparationText(firstStr);
+            List<string> separateStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
             COuttransformStrinf(separateStr);
+            double result = MainFunc.Calculate.CalculateExample(separateStr);
+            Console.WriteLine(result);
             Console.ReadKey();
         }
     }
