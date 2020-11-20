@@ -31,5 +31,28 @@ namespace testSeparationText
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [DataRow("5^1")]
+        [DataRow("(5+6))")]
+        [DataRow("5*/5")]
+        [DataRow("5+-6")]
+        [DataTestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void SeparationText_setExample_getException(string firstStr)
+        {
+            List<string> separatedStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
+            double actualResult = MainFunc.Calculate.CalculateExample(separatedStr);
+        }
+
+        [DataRow("5/0")]
+        [DataRow("(5+6)/(10-5*2)")]
+        [DataRow("(591*21)/0*1")]
+        [DataTestMethod]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void SeparationText_setExample_getDivideByZeroException(string firstStr)
+        {
+            List<string> separatedStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
+            double actualResult = MainFunc.Calculate.CalculateExample(separatedStr);
+        }
     }
 }

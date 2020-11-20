@@ -37,7 +37,7 @@ namespace MainFunc
                 throw new Exception("Неверно расставлены скобки!");
         }
 
-        public static List<string>SeparationText(string firstStr)
+        public static List<string> SeparationText(string firstStr)
         {
             int previous = 0, next = 0;
             if (String.IsNullOrEmpty(firstStr))
