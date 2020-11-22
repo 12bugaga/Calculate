@@ -48,8 +48,19 @@ namespace MainFunc
             {
                 previous = num - 1;
                 next = num + 1;
+                //Число и разделитель
                 if (char.IsDigit(firstStr[num]) || firstStr[num] == '.')
-                    value += firstStr[num];
+                {
+                    //Разделитель после цифры
+                    if (firstStr[num] == '.' && value != "")
+                        value += firstStr[num];
+                    //Цифра
+                    else if (char.IsDigit(firstStr[num]))
+                        value += firstStr[num];
+                    //Разделитель вначале
+                    else if (firstStr[num] == '.' && value == "")
+                        throw new FormatException();
+                }
                 else
                 {
                     if (AvailableOperation(firstStr[num]))

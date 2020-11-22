@@ -42,7 +42,7 @@ namespace testSeparationText
         public void SeparationText_setExample_getException(string firstStr)
         {
             List<string> separatedStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
-            double actualResult = MainFunc.Calculate.CalculateExample(separatedStr);
+            MainFunc.Calculate.CalculateExample(separatedStr);
         }
 
         [DataRow("5/0")]
@@ -53,7 +53,18 @@ namespace testSeparationText
         public void SeparationText_setExample_getDivideByZeroException(string firstStr)
         {
             List<string> separatedStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
-            double actualResult = MainFunc.Calculate.CalculateExample(separatedStr);
+            MainFunc.Calculate.CalculateExample(separatedStr);
+        }
+
+        [DataRow(".5/10")]
+        [DataRow("(5+6)/(.10-5*2)")]
+        [DataRow("521*.")]
+        [DataTestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void SeparationText_setExample_getFormatException(string firstStr)
+        {
+            List<string> separatedStr = MainFunc.ProcessingFirstStr.SeparationText(firstStr);
+            MainFunc.Calculate.CalculateExample(separatedStr);
         }
     }
 }
