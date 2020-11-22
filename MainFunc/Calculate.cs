@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using System.Globalization;
 
 namespace MainFunc
 {
+
     public class Calculate
     {
+        
         public const int SYMBOL = 0;
         static int DefPriopity(char operation)
         {
@@ -57,6 +60,7 @@ namespace MainFunc
 
         public static double CalculateExample(List<string> separateString)
         {
+            CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
             double num;
             Stack<double> parametrs = new Stack<double>();
             Stack<char> actions = new Stack<char>();

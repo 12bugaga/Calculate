@@ -11,7 +11,7 @@ namespace MainFunc
         //Проверка на существование символа/операции, если он не число
         public static bool AvailableOperation(char operation)
         {
-            char[] availableOperation = {'(', ')','+', '-', '*', '/'};
+            char[] availableOperation = {'(', ')','+', '-', '*', '/', '.'};
             bool exist = false;
             foreach (char symbol in availableOperation)
             {
@@ -48,7 +48,7 @@ namespace MainFunc
             {
                 previous = num - 1;
                 next = num + 1;
-                if (char.IsDigit(firstStr[num]))
+                if (char.IsDigit(firstStr[num]) || firstStr[num] == '.')
                     value += firstStr[num];
                 else
                 {

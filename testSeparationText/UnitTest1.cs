@@ -23,6 +23,7 @@ namespace testSeparationText
         [DataRow("-60/30*5*10+1", -99)]
         [DataRow("(10*2/10)+98-100", 0)]
         [DataRow("10/3", 3.33)]
+        [DataRow("(5.5+9.2*4.8)/10/3.2-9-(6.5+2.4)", -16.35)]
         [DataTestMethod]
         public void SeparationText_setExample_getExample(string firstStr, double expectedResult)
         {
