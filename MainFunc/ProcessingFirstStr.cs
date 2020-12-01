@@ -6,10 +6,18 @@ using System.Security.Cryptography;
 
 namespace MainFunc
 {
-    public class ProcessingFirstStr
+    public interface IProcessingFirstStr
+    {
+        //bool AvailableOperation(char operation);
+        //void CheckForBracket(List<string> separateStr);
+        List<string> SeparationText(string firstStr);
+
+    }
+
+    public class ProcessingFirstStr : IProcessingFirstStr
     {
         //Проверка на существование символа/операции, если он не число
-        public static bool AvailableOperation(char operation)
+        public bool AvailableOperation(char operation)
         {
             char[] availableOperation = {'(', ')','+', '-', '*', '/', '.'};
             bool exist = false;
@@ -23,7 +31,7 @@ namespace MainFunc
             return exist;
         }
 
-        static void CheckForBracket(List<string> separateStr)
+        public void CheckForBracket(List<string> separateStr)
         {
             int openCount = 0, closeCount = 0;
             foreach (string symbol in separateStr)
@@ -37,7 +45,7 @@ namespace MainFunc
                 throw new Exception("Неверно расставлены скобки!");
         }
 
-        public static List<string> SeparationText(string firstStr)
+        public List<string> SeparationText(string firstStr)
         {
             int previous = 0, next = 0;
             if (String.IsNullOrEmpty(firstStr))

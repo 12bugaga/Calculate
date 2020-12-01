@@ -3,11 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculate", "Calculate\Calculate.csproj", "{233E8DBB-5A63-4BBE-BB0B-CA5E3C236C3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculate", "Calculate\Calculate.csproj", "{233E8DBB-5A63-4BBE-BB0B-CA5E3C236C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainFunc", "MainFunc\MainFunc.csproj", "{C8C46CE1-7A07-4DED-8A6B-2FAF50BB819F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainFunc", "MainFunc\MainFunc.csproj", "{C8C46CE1-7A07-4DED-8A6B-2FAF50BB819F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testSeparationText", "testSeparationText\testSeparationText.csproj", "{0B606AC6-5B19-4F2E-87CA-9E3A6484A783}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCalculator", "testSeparationText\TestCalculator.csproj", "{0B606AC6-5B19-4F2E-87CA-9E3A6484A783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProcessingWithFirstStr", "TestProcessingWithFirstStr\TestProcessingWithFirstStr.csproj", "{4234D764-4D7D-40B1-A341-A06044667903}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mode_1", "Mode_1\Mode_1.csproj", "{69FB4E00-98D4-47BA-B631-5FB6E94DE919}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithConsole", "WorkWithConsole\WorkWithConsole.csproj", "{E6C3C189-B626-4C8B-A06E-3803954670F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartProgram", "StartProgram\StartProgram.csproj", "{1C5F809C-4264-42B4-98C6-10A26583F152}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mode_2", "Mode_2\Mode_2.csproj", "{9498069C-01FA-4E02-B0CE-23E7F0F45355}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithFile", "WorkWithFile\WorkWithFile.csproj", "{92600EE6-7434-4284-8372-A904EC9D3540}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5816DB31-9305-48CB-8363-8AA5E8ECDE8E}"
+	ProjectSection(SolutionItems) = preProject
+		Calculate\bin\Debug\netcoreapp3.1\Example\Exmpl.txt = Calculate\bin\Debug\netcoreapp3.1\Example\Exmpl.txt
+		Calculate\bin\Debug\netcoreapp3.1\Example\ResultFile.txt = Calculate\bin\Debug\netcoreapp3.1\Example\ResultFile.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +45,30 @@ Global
 		{0B606AC6-5B19-4F2E-87CA-9E3A6484A783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B606AC6-5B19-4F2E-87CA-9E3A6484A783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B606AC6-5B19-4F2E-87CA-9E3A6484A783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4234D764-4D7D-40B1-A341-A06044667903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4234D764-4D7D-40B1-A341-A06044667903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4234D764-4D7D-40B1-A341-A06044667903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4234D764-4D7D-40B1-A341-A06044667903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FB4E00-98D4-47BA-B631-5FB6E94DE919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FB4E00-98D4-47BA-B631-5FB6E94DE919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FB4E00-98D4-47BA-B631-5FB6E94DE919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FB4E00-98D4-47BA-B631-5FB6E94DE919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C3C189-B626-4C8B-A06E-3803954670F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C3C189-B626-4C8B-A06E-3803954670F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C3C189-B626-4C8B-A06E-3803954670F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C3C189-B626-4C8B-A06E-3803954670F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C5F809C-4264-42B4-98C6-10A26583F152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5F809C-4264-42B4-98C6-10A26583F152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5F809C-4264-42B4-98C6-10A26583F152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5F809C-4264-42B4-98C6-10A26583F152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9498069C-01FA-4E02-B0CE-23E7F0F45355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9498069C-01FA-4E02-B0CE-23E7F0F45355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9498069C-01FA-4E02-B0CE-23E7F0F45355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9498069C-01FA-4E02-B0CE-23E7F0F45355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92600EE6-7434-4284-8372-A904EC9D3540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92600EE6-7434-4284-8372-A904EC9D3540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92600EE6-7434-4284-8372-A904EC9D3540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92600EE6-7434-4284-8372-A904EC9D3540}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StartProgram\StartProgram.csproj" />
+    <ProjectReference Include="..\Mode_1\Mode_1.csproj" />
+    <ProjectReference Include="..\Mode_2\Mode_2.csproj" />
     <ProjectReference Include="..\WorkWithConsole\WorkWithConsole.csproj" />
   </ItemGroup>
 

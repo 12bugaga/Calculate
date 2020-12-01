@@ -8,34 +8,39 @@ using System.Globalization;
 namespace MainFunc
 {
 
-    public class Calculate
+    public interface ICalculate
+    {
+        double CalculateExample(List<string> separateString);
+    }
+
+    public class Calculate : ICalculate
     {
         
-        public const int SYMBOL = 0;
-        static int DefPriopity(char operation)
+        private const int SYMBOL = 0;
+        private int DefPriopity(char operation)
         {
             if (operation == '+' || operation == '-') return 1;
             else if (operation == '*' || operation == '/') return 2;
             else return 0;
         }
 
-        static double Subtraction(double a, double b)
+        private double Subtraction(double a, double b)
         {
             return (a - b);
         }
-        static double Addition(double a, double b)
+        private double Addition(double a, double b)
         {
             return (a + b);
         }
-        static double Division(double a, double b)
+        private double Division(double a, double b)
         {
             return (a / b);
         }
-        static double Multiplication(double a, double b)
+        private double Multiplication(double a, double b)
         {
             return (a * b);
         }
-        static void CalculateLastOperation(ref Stack<double> arguments, char operations)
+        private void CalculateLastOperation(ref Stack<double> arguments, char operations)
         {
             double result = 0, b = arguments.Pop(), a=arguments.Pop();
             switch  (operations)
@@ -58,7 +63,7 @@ namespace MainFunc
             arguments.Push(Math.Round(result, 2));
         }
 
-        public static double CalculateExample(List<string> separateString)
+        public double CalculateExample(List<string> separateString)
         {
             CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
             double num;
