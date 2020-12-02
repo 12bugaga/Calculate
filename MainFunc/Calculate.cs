@@ -19,9 +19,23 @@ namespace MainFunc
         private const int SYMBOL = 0;
         private int DefPriopity(char operation)
         {
-            if (operation == '+' || operation == '-') return 1;
-            else if (operation == '*' || operation == '/') return 2;
-            else return 0;
+            int deffinite = 0;
+            switch (operation)
+            {
+                case '+':
+                    deffinite = 1;
+                    break;
+                case '-':
+                    deffinite = 1;
+                    break;
+                case '*':
+                    deffinite = 2;
+                    break;
+                case '/':
+                    deffinite = 2;
+                    break;
+            }
+            return deffinite;
         }
 
         private double Subtraction(double a, double b)

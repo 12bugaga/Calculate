@@ -27,13 +27,13 @@ namespace Mode_2
             if (new FileInfo(pathToFile).Length == 0)
                 throw new Exception("File is empty!");
 
-            List<string> textFromFile = _ProcWithFile.ReadFromFile(pathToFile);
+            string[] textFromFile = _ProcWithFile.ReadFromFile(pathToFile);
             List<string> allExampleForPrint = FillparamForFile(textFromFile);
             string pathToSaveFile = _ProcWithFile.SaveToFile(allExampleForPrint, pathToFile);
             _WConsole.PathToFileWitshAnswer(pathToSaveFile);
         }
 
-        private List<string> FillparamForFile(List<string> textFromFile)
+        private List<string> FillparamForFile(string[] textFromFile)
         {
             string result = "";
             List<string> allExample = new List<string>(), separateExample;

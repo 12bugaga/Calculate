@@ -5,23 +5,15 @@ namespace WorkWithFile
 {
     public interface IProcessWithFile
     {
-        List<String> ReadFromFile(string pathToFile);
+        string[] ReadFromFile(string pathToFile);
         string SaveToFile(List<string> allAnswer, string pathToFile);
     }
 
     public class ProcessWithFile : IProcessWithFile
     {
-        public List<string> ReadFromFile(string pathToFile)
+        public string[] ReadFromFile(string pathToFile)
         {
-            using (StreamReader textFromFile = new StreamReader(pathToFile))
-            {
-                List<string> allText = new List<string>();
-                while (!textFromFile.EndOfStream)
-                {
-                    allText.Add(Convert.ToString(textFromFile.ReadLine()));
-                }
-                return allText;
-            }
+            return File.ReadAllLines(pathToFile);
         }
 
         public string SaveToFile(List<string> allAnswer, string pathToFile)

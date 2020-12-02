@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -20,12 +21,8 @@ namespace MainFunc
         public bool AvailableOperation(char operation)
         {
             char[] availableOperation = {'(', ')','+', '-', '*', '/', '.'};
-            bool exist = false;
-            foreach (char symbol in availableOperation)
-            {
-                if (symbol == operation)
-                    exist = true;
-            }
+            bool exist = availableOperation.Contains(operation);
+
             if (exist == false)
                 throw new Exception("Нет такой операции!");
             return exist;
