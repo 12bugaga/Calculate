@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Calculate
 {
     class Program
     {
+        /*
         private readonly WorkWithConsole.IWorkWithConsole _WConsole;
         private readonly MainFunc.IProcessingFirstStr _ProcessWithString;
         private readonly MainFunc.ICalculate _Calculator;
@@ -17,12 +20,16 @@ namespace Calculate
             _Calculator = Calculator;
             _ProcWithFile = ProcWithFile;
         }
+        */
 
         static void Main(string[] args)
         {
+            var serviceProvider = new ServiceCollection()
+            .AddSingleton<StartProgram.IStart>(new StartProgram.Start(new WorkWithConsole.WorkWithConsole(), new MainFunc.ProcessingFirstStr(), new MainFunc.Calculate(), new WorkWithFile.ProcessWithFile()))
+            .BuildServiceProvider();
+
             Console.OutputEncoding = Encoding.UTF8;
-            Program progr = new Program(new WorkWithConsole.WorkWithConsole(), new MainFunc.ProcessingFirstStr(), new MainFunc.Calculate(), new WorkWithFile.ProcessWithFile());
-            StartProgram.Start start = new StartProgram.Start(progr._WConsole, progr._ProcessWithString, progr._Calculator, progr._ProcWithFile);
+            var start = serviceProvider.GetService<StartProgram.IStart>();
             start.StartCalc();
             Console.WriteLine("Для выхода нажмите любую клавишу!");
             Console.ReadKey();

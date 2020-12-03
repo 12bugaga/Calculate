@@ -2,7 +2,13 @@
 
 namespace StartProgram
 {
-    public class Start
+
+    public interface IStart
+    {
+        void StartCalc();
+    }
+
+    public class Start : IStart
     {
         private readonly WorkWithConsole.IWorkWithConsole _WConsole;
         private readonly MainFunc.IProcessingFirstStr _ProcessWithString;
@@ -16,15 +22,7 @@ namespace StartProgram
             _Calculator = Calculator;
             _ProcWithFile = ProcWithFile;
         }
-
-        /*
-        public enum Answ
-        {
-            1,
-            2
-        }
-        */
-
+        
         public void StartCalc()
         {
             _WConsole.FirstMessage();
